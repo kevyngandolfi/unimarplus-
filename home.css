@@ -1,0 +1,292 @@
+/* Importando uma fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis de Cores e Estilos Globais */
+:root {
+    --primary-color: #005A87; /* Azul Unimar */
+    --secondary-color: #4CAF50; /* Verde para sucesso/progresso */
+    --background-color: #f4f7f9;
+    --card-background: #FFFFFF;
+    --text-color: #333;
+    --text-light: #777;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--card-background);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.logo span {
+    font-weight: 300;
+    color: var(--text-light);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 1.5rem;
+    font-weight: 400;
+}
+
+nav .btn-logout {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+nav .btn-logout:hover {
+    background-color: #004366;
+}
+
+/* Seção de Boas-Vindas (Hero) */
+.welcome-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(45deg, var(--primary-color), #007cb9);
+    color: white;
+}
+
+.welcome-hero h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Container das Trilhas */
+.paths-container {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paths-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+/* Grid de Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-icon i {
+    font-size: 1.8rem;
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+/* Barra de Progresso e Status */
+.card-progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 12px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.course-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* Estilo para cards bloqueados */
+.course-card.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.course-card.locked:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+}
+
+.course-card.locked .card-progress {
+    justify-content: center;
+    background: #e0e0e0;
+}
+
+.course-card.locked i.fa-lock {
+    color: #666;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #e9ecef;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Adicionar ao final do seu arquivo style.css */
+
+/* Estilo para o botão de login no header */
+.btn-login {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #004366;
+}
+
+
+/* Link "Saiba Mais" dentro dos cards */
+.card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.card-link:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Nova Seção: Sobre a Plataforma */
+.about-platform {
+    background-color: var(--card-background);
+    text-align: center;
+    padding: 5rem 5%;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.about-platform h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.about-platform p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
