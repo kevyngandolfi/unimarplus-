@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - U+</title>
+    <link rel="icon" type="image/png" href="fav.png">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Unimar <span>Plus+</span></h1>
+            </div>
+            <nav class="filter-menu">
+                <h3>Categorias</h3>
+                <ul>
+                    <li class="filter-item active" data-filter="all">
+                        <i class="fas fa-grip-horizontal"></i> Todas as Trilhas
+                    </li>
+                    <li class="filter-item" data-filter="tecnologia">
+                        <i class="fas fa-laptop-code"></i> Tecnologia
+                    </li>
+                    <li class="filter-item" data-filter="humanas">
+                        <i class="fas fa-users"></i> Gestão e Humanas
+                    </li>
+                    <li class="filter-item" data-filter="exatas">
+                        <i class="fas fa-calculator"></i> Exatas e Operacional
+                    </li>
+                    <li class="filter-item" data-filter="docencia">
+                        <i class="fas fa-chalkboard-teacher"></i> Docência
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="home.html" class="btn-logout">Sair <i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h2>Minhas Trilhas de Aprendizagem</h2>
+                <div class="user-profile">
+                    <span>Bem-vindo(a), **Nome do Usuário**</span>
+                    <img src="https://i.pravatar.cc/40" alt="Avatar do Usuário">
+                </div>
+            </header>
+            
+            <section class="courses-grid">
+                <div class="course-card" data-category="tecnologia">
+                    <a href="cursos.html" class="course-card-link">
+
+                        <h3>Segurança da Informação Básica</h3>
+                        <p>Proteja seus dados e os da instituição contra ameaças digitais.</p>
+                        <div class="card-progress">
+                            <div class="progress-bar" style="width: 30%;"></div>
+                        </div>
+                        <span>30% Completo</span>
+                    </a>
+                    
+                </div>
+                
+                <div class="course-card" data-category="docencia">
+                    <a href="cursos.html" class="course-card-link">
+                        
+                    <h3>Ferramentas Digitais para Docentes</h3>
+                    <p>Domine o Moodle, Google Classroom e outras ferramentas essenciais.</p>
+                    <div class="card-progress">
+                        <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                    <span>85% Completo</span>
+                    </a>
+                    
+                </div>
+
+                <div class="course-card" data-category="humanas">
+                    <a href="cursos.html" class="course-card-link">
+
+                    <h3>Liderança e Gestão de Pessoas</h3>
+                    <p>Desenvolva habilidades para liderar e motivar sua equipe com eficácia.</p>
+                    <div class="card-progress">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <span>Concluído!</span>
+                    </a>
+                    
+                </div>
+
+                <div class="course-card" data-category="exatas">
+                    <a href="cursos.html" class="course-card-link">
+
+                    <h3>Excel para Rotinas Administrativas</h3>
+                    <p>Otimize seu trabalho diário com planilhas inteligentes e automação.</p>
+                    <div class="card-progress">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <span>Não iniciado</span>
+                    </a>
+                    
+                </div>
+
+                <div class="course-card" data-category="tecnologia">
+                    <a href="cursos.html" class="course-card-link">
+
+                    <h3>Introdução à LGPD</h3>
+                    <p>Entenda a Lei Geral de Proteção de Dados e sua aplicação na Unimar.</p>
+                    <div class="card-progress">
+                        <div class="progress-bar" style="width: 50%;"></div>
+                    </div>
+                    <span>50% Completo</span>
+                    </a>
+                    
+                </div>
+
+                <div class="course-card" data-category="humanas">
+                    <a href="cursos.html" class="course-card-link">
+
+                    <h3>Comunicação Eficaz no Trabalho</h3>
+                    <p>Aprenda técnicas de comunicação para melhorar a colaboração.</p>
+                    <div class="card-progress">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <span>75% Completo</span>
+                    </a>
+                    
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso: Ferramentas Digitais - Unimar Plus+</title>
+    <link rel="icon" type="image/png" href="fav.png">
+    <link rel="stylesheet" href="/css/cursos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="course-header">
+        <a href="dashboard.html" class="back-button"><i class="fas fa-arrow-left"></i> Voltar para o Dashboard</a>
+        <div class="logo">
+            <a href="dashboard.html" style="text-decoration: none">
+                <h1>Unimar <span>Plus+</span></h1>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="course-banner">
+            <h1>Ferramentas Digitais para Docentes</h1>
+            <p>Domine o Moodle, Google Classroom e outras ferramentas essenciais para o ensino moderno.</p>
+            <div class="course-total-progress">
+                <span>Progresso Total</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 40%;"></div>
+                </div>
+                <span>40%</span>
+            </div>
+        </section>
+
+        <section class="learning-path">
+            <div class="path-step completed">
+                <div class="step-content left">
+                    <h2>1. Introdução ao Moodle</h2>
+                    <p>Conheça a interface e os recursos básicos.</p>
+                </div>
+                <div class="path-node" data-modal-target="#lesson-modal" data-title="1. Introdução ao Moodle" data-content="<p>Aqui teríamos o texto ou vídeo explicando a interface do Moodle...</p>">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+
+            <div class="path-step completed">
+                <div class="step-content right">
+                    <h2>2. Criando Atividades</h2>
+                    <p>Aprenda a criar tarefas e questionários.</p>
+                </div>
+                <div class="path-node" data-modal-target="#lesson-modal" data-title="2. Criando Atividades" data-content="<p>Conteúdo sobre como criar tarefas, configurar notas, etc.</p>">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+
+            <div class="path-step active">
+                <div class="step-content left">
+                    <h2>3. Google Classroom</h2>
+                    <p>Integrando o Classroom em suas aulas.</p>
+                </div>
+                <div class="path-node" data-modal-target="#lesson-modal" data-title="3. Google Classroom" data-content="<h3>Explorando o Google Classroom</h3><p>Este é o conteúdo principal da aula. Poderíamos ter um vídeo aqui:</p><iframe width='100%' height='315' src='https://www.youtube.com/embed/YrUWcdiP_N0?si=zo5RkD23QzO_IiTv' frameborder='0' allowfullscreen></iframe>">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="path-step locked">
+                 <div class="step-content right">
+                    <h2>4. Ferramentas de Apresentação</h2>
+                    <p>Canva, Prezi e outras alternativas.</p>
+                </div>
+                <div class="path-node">
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+
+            <div class="path-step locked">
+                <div class="step-content left">
+                    <h2>5. Avaliação Final</h2>
+                    <p>Teste seus conhecimentos.</p>
+                </div>
+                <div class="path-node">
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+    <div class="modal" id="lesson-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Título da Aula</h3>
+            <button class="modal-close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            </div>
+    </div>
+    <div id="overlay"></div>
+
+    <script src="curso.js"></script>
+</body>
+</html>

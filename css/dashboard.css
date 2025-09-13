@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #005A87; /* Azul Unimar */
+    --secondary-color: #4CAF50; /* Verde progresso */
+    --sidebar-bg: #ffffff;
+    --dashboard-bg: #f4f7f9;
+    --card-background: #FFFFFF;
+    --text-color: #333;
+    --text-light: #777;
+    --border-color: #e9e9e9;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dashboard-bg);
+}
+
+.dashboard-wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Coluna para sidebar e para o conteúdo */
+    min-height: 100vh;
+}
+
+/* --- Sidebar (Menu Lateral) --- */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar .logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+}
+
+.sidebar .logo span {
+    font-weight: 300;
+}
+
+.filter-menu h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.filter-menu ul {
+    list-style: none;
+}
+
+.filter-menu .filter-item {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    color: #555;
+}
+
+.filter-menu .filter-item i {
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.filter-menu .filter-item:hover {
+    background-color: #eef5ff;
+    color: var(--primary-color);
+}
+
+/* Estilo do item de menu ATIVO */
+.filter-menu .filter-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Empurra o botão de sair para o final */
+}
+
+.btn-logout {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.8rem;
+    background-color: #fdecec;
+    color: #c82333;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    padding: 2rem 3rem;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile span {
+    margin-right: 1rem;
+    font-weight: 500;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* --- Grid de Cursos --- */
+.courses-grid {
+    display: grid; /* Layout padrão em grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    transition: all 0.5s ease-in-out; /* Transição para suavizar mudanças de layout */
+    padding-bottom: 2rem; /* Espaçamento extra caso a linha horizontal tenha scroll */
+}
+
+/* Estilo para quando a grid estiver em uma única fileira (ativada pelo JS) */
+.courses-grid.single-row {
+    display: flex; /* Muda para flexbox para alinhar em uma linha */
+    flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
+    overflow-x: auto; /* Adiciona scroll horizontal se houver muitos itens */
+    gap: 1.5rem; /* Ajusta o espaçamento entre os cards na linha */
+    padding-bottom: 1rem; /* Ajuste o padding para o scrollbar */
+    scroll-snap-type: x mandatory; /* Para um scroll mais suave, tipo "carrossel" */
+    -webkit-overflow-scrolling: touch; /* Suavidade no iOS */
+}
+
+.courses-grid.single-row .course-card {
+    flex: 0 0 320px; /* Impede o encolhimento, define largura base e cresce um pouco */
+    min-width: 320px; /* Largura mínima para os cards na fileira */
+    scroll-snap-align: start; /* Alinha o início do card ao scroll-snap */
+}
+
+/* Esconder a barra de rolagem para navegadores WebKit (Chrome, Safari) */
+.courses-grid.single-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.courses-grid.single-row::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.courses-grid.single-row::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.courses-grid.single-row::-webkit-scrollbar-thumb:hover {
+    background: #004366;
+}
+
+/* Ajustes para cards ocultos - animação mais fluida */
+.course-card.hidden {
+    opacity: 0;
+    transform: scale(0.8); /* Reduz o tamanho ao esconder */
+    height: 0; /* Remove a altura para não ocupar espaço */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    border: none; /* Remove borda */
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    transition: all 0.4s ease-in-out; /* Transição para esconder/mostrar */
+}
+
+/* Garante que o card visível tenha seus estilos normais */
+.course-card:not(.hidden) {
+    opacity: 1;
+    transform: scale(1);
+    height: auto;
+    padding: 1.5rem; /* Reverte para o padding normal */
+    margin-bottom: 0; /* Garante que não tenha margin-bottom na single-row */
+    border: 1px solid var(--border-color); /* Reverte a borda */
+}
+
+
+/* Card de curso (reutilizando e adaptando o estilo anterior) */
+.course-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.course-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.card-progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 8px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    background-color: var(--secondary-color);
+    height: 100%;
+    border-radius: 10px;
+}
+
+.course-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* Classe para esconder os cards durante o filtro */
+.course-card.hidden {
+    transform: scale(0.9);
+    opacity: 0;
+    /* Adicionamos display none via JS para remover o card do fluxo */
+}
+.course-card-link {
+    text-decoration: none;
+    color: inherit;
+    display:inline-block;
+    transition: 0.3s;
+}
+.course-card:hover{
+    transform: translateY(-15px);
+}
